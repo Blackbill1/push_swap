@@ -6,7 +6,7 @@
 /*   By: koala-grille <koala-grille@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 00:34:21 by tle-dref          #+#    #+#             */
-/*   Updated: 2024/10/28 05:38:11 by koala-grill      ###   ########.fr       */
+/*   Updated: 2024/10/28 16:31:08 by koala-grill      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
+	int 			index;
 }					t_node;
 
 typedef struct s_stack
