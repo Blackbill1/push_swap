@@ -6,7 +6,7 @@
 /*   By: tle-dref <tle-dref@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 00:34:21 by tle-dref          #+#    #+#             */
-/*   Updated: 2024/10/27 22:55:17 by tle-dref         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:33:19 by tle-dref         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,23 @@ typedef struct s_stack
 	t_node			*top;
 	int				size;
 	int				min;
-	int 			max;
+	int				max;
 }					t_stack;
+
+typedef struct s_move
+{
+	int				pa;
+	int				pb;
+	int				ra;
+	int				rb;
+	int				rr;
+	int				sa;
+	int				sb;
+	int				ss;
+	int				rra;
+	int				rrb;
+	int				rrr;
+}					t_move;
 
 int					ft_isdigit(int c);
 long				ft_atol_scam(const char *str);
