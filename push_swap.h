@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koala-grille <koala-grille@student.42.f    +#+  +:+       +#+        */
+/*   By: tle-dref <tle-dref@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 00:34:21 by tle-dref          #+#    #+#             */
-/*   Updated: 2024/10/28 16:31:08 by koala-grill      ###   ########.fr       */
+/*   Updated: 2024/10/29 01:07:39 by tle-dref         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "src/ft_printf.h"
+#include "ft_printf/ft_printf.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,7 +20,7 @@ typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
-	int 			index;
+	int				index;
 }					t_node;
 
 typedef struct s_stack
@@ -45,12 +44,13 @@ typedef struct s_move
 	int				rra;
 	int				rrb;
 	int				rrr;
+	int				cost;
+	int				value;
 }					t_move;
 
 int					ft_isdigit(int c);
 long				ft_atol_scam(const char *str);
 char				**ft_split(char const *s, char c);
-int					one_arg(char **split, int *tab);
 int					multi_args(int argc, char **argv, int *tab);
 int					checktab(int *tab, int end);
 void				swap(t_stack *stack);
@@ -70,4 +70,22 @@ void				rrb(t_stack *b);
 void				rrr(t_stack *a, t_stack *b);
 int					find_pos_b(int value, t_stack *b);
 void				start(t_stack *a, t_stack *b);
-
+t_move				efficient_move(t_move move);
+t_move				move_cost(t_stack *a, t_stack *b, int pos_b, int index);
+int					find_pos_b(int value, t_stack *b);
+int					total_move_cost(t_move move);
+t_move				find_cheapest(t_stack *a, t_stack *b);
+void				exec_moves(t_stack *a, t_stack *b, t_move move);
+void				exec_moves_a(t_stack *a, t_stack *b, t_move move);
+void				sort_three(t_stack *a);
+void				sort(t_stack *a, t_stack *b);
+int					is_sorted(t_stack *a);
+void				sort_back(t_stack *b, t_stack *a);
+int					find_pos_a(int value, t_stack *a);
+void				assign_indices(t_stack *a);
+t_move				find_return(t_stack *a, t_stack *b);
+t_move				move_cost_a(t_stack *a, t_stack *b, int pos_a, int index);
+int					find_min_pos(t_stack *a);
+void				*ft_memset(void *s, int c, size_t n);
+void				ft_putendl_fd(char *s, int fd);
+void				ft_putstr_fd(char *s, int fd);
