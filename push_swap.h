@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tle-dref <tle-dref@student.42.fr>          +#+  +:+       +#+        */
+/*   By: koala-grille <koala-grille@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 00:34:21 by tle-dref          #+#    #+#             */
-/*   Updated: 2024/10/27 23:33:19 by tle-dref         ###   ########.fr       */
+/*   Updated: 2024/10/28 05:38:11 by koala-grill      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #include "libft/libft.h"
 #include "src/ft_printf.h"
@@ -69,15 +67,6 @@ void				reverse(t_stack *stack);
 void				rra(t_stack *a);
 void				rrb(t_stack *b);
 void				rrr(t_stack *a, t_stack *b);
+int					find_pos_b(int value, t_stack *b);
+void				start(t_stack *a, t_stack *b);
 
-// #define assert(x, y, z) if (x == y) { \
-// 							printf("Assert %s\t: OK\n", z); \
-// 						} else { \
-// 							printf("Assert %s\t: FAIL\n", z); \
-// 						}
-
-// #define assert_s(x, y, z) if (!strcmp(x, y)) { \
-// 							printf("Assert %s\t: OK\n", z); \
-// 						} else { \
-// 							printf("Assert %s\t: FAIL\n", z); \
-// 						}
